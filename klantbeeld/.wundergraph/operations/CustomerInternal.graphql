@@ -1,7 +1,0 @@
-query Customer(
-    $customerId: UUID!
-) @internalOperation {
-	klant: mock_getKlant(id: $customerId){
-		bsn
-	}
-}
