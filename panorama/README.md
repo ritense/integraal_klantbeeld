@@ -21,6 +21,20 @@ Code generation is done as part of most scripts, but can always be done manually
    pnpm codegen
 ```
 
+### Running the Wundergraph server
+
+1. Install the dependencies:
+    ```shell
+   pnpm install
+   ```
+2. Run the server with:
+    ```shell
+   pnpm wundergraph
+   ```
+
+Wundergraph will start up the server and generate code if necessary.
+The server will become available at [http://localhost:9001](http://localhost:9001).
+
 ### Running the example App:
 
 1. Install the dependencies:
