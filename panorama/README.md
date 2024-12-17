@@ -15,7 +15,7 @@ Make sure you have the following tools installed on your system:
 
 ### Code generation
 
-This application makes use of Wudnergraph code generation for the example app and the tests.
+This application makes use of Wundergraph code generation for the example app and the tests.
 Code generation is done as part of most scripts, but can always be done manually by running the following shell command:
 ```shell
    pnpm codegen
