@@ -33,7 +33,7 @@ Code generation is done as part of most scripts, but can always be done manually
    ```
 
 Wundergraph will start up the server and generate code if necessary.
-The server will become available at [http://localhost:9001](http://localhost:9001).
+The server will become available at [http://localhost:9991](http://localhost:9991).
 
 ### Running the example App:
 
