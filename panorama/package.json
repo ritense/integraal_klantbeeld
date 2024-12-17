@@ -7,6 +7,7 @@
     "check": "tsc --noEmit",
     "codegen": "wunderctl generate",
     "clean": "rimraf dist **/generated*",
+    "reinstall": "rimraf node_modules && pnpm i",
     "wundergraph": "wunderctl up",
     "browser": "wait-on \"http-get://localhost:5000\" && wait-on \"http-get://localhost:9991\" && open-cli http://localhost:5000",
     "vite:dev": "vite --port 5000 --mode development",

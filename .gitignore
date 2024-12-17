@@ -64,5 +64,8 @@ Desktop.ini
 **/AwsCredentials.properties
 /.env.properties
 
+# Npm lock
+package-lock.json
+
 # Generated Code
 **/generated*
