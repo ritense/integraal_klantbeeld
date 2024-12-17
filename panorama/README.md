@@ -13,6 +13,13 @@ Make sure you have the following tools installed on your system:
 * **pnpm**
   * 9.15.0
 
+### Code generation
+
+This application makes use of Wudnergraph code generation for the example app and the tests.
+Code generation is done as part of most scripts, but can always be done manually by running the following shell command:
+```shell
+   pnpm codegen
+```
 
 ### Running the example App:
 
@@ -32,3 +39,10 @@ If no tab is open, navigate to [http://localhost:5000](http://localhost:5000).
 Running WunderGraph will automatically introspect the data-source and generate an API for you.
 You can add more Operations (e.g. Queries or Mutations) by adding more "\*.graphql" files to the directory `./wundergraph/operations`.
 Each file becomes an Operation. The Operation name is not relevant, the file name is.
+
+### Cleanup
+
+Use the following script to remove any generated code and compiled code:
+```shell
+   pnpm clean
+   ```

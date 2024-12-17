@@ -1,19 +1,20 @@
 import reactLogo from './assets/react.svg';
 import './App.css';
 import { useQuery } from './lib/wundergraph';
+import React from "react";
 
 const Dragons: React.FC = () => {
 	const { data, error, isLoading } = useQuery({
-		operationName: 'Dragons',
+		operationName: 'spacex/Dragons',
 	});
 	return (
 		<div>
 			{isLoading && <p>Loading...</p>}
 			{error && <p>Error: {JSON.stringify(error, null, 2)}</p>}
 			{data && (
-				<div>
-					<p>{JSON.stringify(data, null, 2)}</p>
-				</div>
+				<pre>
+					<p>{JSON.stringify(data, null, 4)}</p>
+				</pre>
 			)}
 		</div>
 	);
@@ -23,13 +24,13 @@ function App() {
 	return (
 		<div className="App">
 			<div>
-				<a href="https://wundergraph.com" target="_blank">
+				<a href="https://wundergraph.com" target="_blank" rel="noreferrer">
 					<img src="/wundergraph.svg" className="logo wundergraph" alt="WunderGraph logo" />
 				</a>
-				<a href="https://vitejs.dev" target="_blank">
+				<a href="https://vitejs.dev" target="_blank" rel="noreferrer">
 					<img src="/vite.svg" className="logo" alt="Vite logo" />
 				</a>
-				<a href="https://reactjs.org" target="_blank">
+				<a href="https://reactjs.org" target="_blank" rel="noreferrer">
 					<img src={reactLogo} className="logo react" alt="React logo" />
 				</a>
 			</div>
