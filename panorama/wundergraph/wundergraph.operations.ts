@@ -1,11 +1,15 @@
-import { configureWunderGraphOperations } from '@wundergraph/sdk';
+import {configureWunderGraphOperations, EnvironmentVariable} from '@wundergraph/sdk';
 import type { OperationsConfiguration } from './generated/wundergraph.operations';
+import {resolveVariable} from "@wundergraph/sdk/dist/configure/variables";
+
+const HAALCENTRAAL_PERSONEN_AUTHENTICATION_REQUIRED: boolean =
+	resolveVariable(new EnvironmentVariable('OPERATIONS_HAALCENTRAAL_PERSONEN_AUTHENTICATION_REQUIRED','true')) === 'true'
 
 export default configureWunderGraphOperations<OperationsConfiguration>({
 	operations: {
 		defaultConfig: {
 			authentication: {
-				required: false,
+				required: true
 			},
 		},
 		queries: (config) => ({
@@ -27,6 +31,13 @@ export default configureWunderGraphOperations<OperationsConfiguration>({
 		subscriptions: (config) => ({
 			...config,
 		}),
-		custom: {},
+		custom: {
+			HaalcentraalPersonen: (config) => ({
+				...config,
+				authentication: {
+					required: HAALCENTRAAL_PERSONEN_AUTHENTICATION_REQUIRED
+				}
+			})
+		},
 	},
 });

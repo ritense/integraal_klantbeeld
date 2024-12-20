@@ -6,7 +6,12 @@ export default defineConfig({
     optimizeDeps: {
         include: ['@wundergraph/swr', '@wundergraph/sdk/client'],
         esbuildOptions: {
-            target: 'es2020',
-        },
+            target: 'esnext',
+        }
     },
+    server: {
+        watch: {
+            usePolling: true
+        }
+    }
 });

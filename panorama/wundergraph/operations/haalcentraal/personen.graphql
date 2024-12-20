@@ -1,0 +1,52 @@
+mutation RaadpleegPersonenMetBurgerservicenummer($bsn: [haalcentraal_Burgerservicenummer], $fields: [haalcentraal_Field]!) {
+
+    haalcentraal_Personen(input: {type: "RaadpleegMetBurgerservicenummer", burgerservicenummer: $bsn, fields: $fields}) {
+        ... on haalcentraal_PersonenQueryResponse {
+            personen {
+                burgerservicenummer
+                naam {
+                    volledigeNaam
+                    adellijkeTitelPredicaat {
+                        code
+                        omschrijving
+                    }
+                    voorletters
+                    voornamen
+                    voorvoegsel
+                    geslachtsnaam
+                }
+                geslacht {
+                    code
+                    omschrijving
+                }
+                nationaliteiten {
+                    type
+                    redenOpname {
+                        code
+                        omschrijving
+                    }
+                }
+                geboorte {
+                    land {
+                        code
+                        omschrijving
+                    }
+                    plaats {
+                        code
+                        omschrijving
+                    }
+                    datum {
+                        type
+                        langFormaat
+                    }
+                }
+            }
+        }
+        ... on haalcentraal_Foutbericht {
+            status
+            title
+            detail
+            code
+        }
+    }
+}
